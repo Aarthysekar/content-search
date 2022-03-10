@@ -36,6 +36,7 @@ const ContentCard = ({ contentData }) => {
           letterSpacing='wide'
           fontSize='xs'
           textTransform='uppercase'
+          color='tigerHallOrange'
         >
           {name}
         </Text>
@@ -49,6 +50,7 @@ const ContentCard = ({ contentData }) => {
           <Text
             fontWeight='semibold'
             fontSize='sm'
+            color='lightBlack'
             textTransform='uppercase'
             isTruncated
             title={title}
@@ -58,6 +60,7 @@ const ContentCard = ({ contentData }) => {
           <Text
             fontWeight='semibold'
             fontSize='sm'
+            color='tigerHallOrange'
             mb={25}
           >
             {company}
