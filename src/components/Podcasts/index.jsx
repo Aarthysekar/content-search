@@ -7,9 +7,9 @@ import Spin from 'components/Spin';
 import Empty from 'components/Empty';
 import ContentGrid from './ContentGrid';
 
-const renderEmptyComponent = (message) => {
-  return <Empty message={message} />
-}
+const renderEmptyComponent = message => {
+  return <Empty message={message} />;
+};
 
 const Podcast = () => {
   const { data, loading, error } = useQuery(GET_CONTENT_CARDS);
@@ -34,11 +34,13 @@ const Podcast = () => {
           return name?.toLowerCase().includes(keyword.toLowerCase());
         })
       : edges;
-    if(!edges.length) {
+    if (!edges.length) {
       return renderEmptyComponent('No podcasts found.');
     }
-    if(keyword.length && !filteredContent.length){
-      return renderEmptyComponent('No matches found. Please try a different keyword.');
+    if (keyword.length && !filteredContent.length) {
+      return renderEmptyComponent(
+        'No matches found. Please try a different keyword.'
+      );
     }
     return <ContentGrid content={filteredContent} />;
   };
@@ -54,7 +56,10 @@ const Podcast = () => {
           toggleFilterStatus={onFiltering}
         />
       </Box>
-      <Spin loading={loading || filtering} tip={`${loading ? 'Loading' : 'Filtering'} podcasts ...`}>
+      <Spin
+        loading={loading || filtering}
+        tip={`${loading ? 'Loading' : 'Filtering'} podcasts ...`}
+      >
         {error && 'Unable to process your request'}
         {!loading && !error && renderContents()}
       </Spin>
