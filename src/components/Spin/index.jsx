@@ -1,4 +1,5 @@
 import { Center } from '@chakra-ui/react';
+import LoadingIndicator from 'components/LoadingIndicator';
 
 const Spin = props => {
   const { loading, tip, children } = props;
@@ -6,7 +7,7 @@ const Spin = props => {
     <Center>
       {loading ? (
         <>
-          Loading ...
+          <LoadingIndicator />
           <br />
           {tip}
         </>
