@@ -1,4 +1,4 @@
-import { memo } from 'raect';
+import { memo } from 'react';
 import { SimpleGrid } from '@chakra-ui/react';
 import ContentCard from './ContentCard';
 
