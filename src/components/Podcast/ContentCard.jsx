@@ -17,18 +17,18 @@ const ContentCard = ({ contentData }) => {
 
   return (
     <Box
-      borderRadius="md"
-      bg="white"
-      overflow="hidden"
-      as="article"
-      color="black"
+      borderRadius='md'
+      bg='white'
+      overflow='hidden'
+      as='article'
+      color='black'
     >
       <Image
         src={formImageUrl(uri)}
         alt={name}
-        objectFit="cover"
-        height="130"
-        w="full"
+        objectFit='cover'
+        height='130'
+        w='full'
       />
       <Box>
         <Text>{name}</Text>
