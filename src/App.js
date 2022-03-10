@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  ChakraProvider,
-  theme,
+  ChakraProvider
 } from '@chakra-ui/react';
 import Podcast from 'components/Podcast';
+import theme from 'theme';
 
 
 function App() {
