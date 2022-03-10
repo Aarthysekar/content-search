@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Box, Center, Stack, Text } from '@chakra-ui/react';
+import { Box, Stack, Text } from '@chakra-ui/react';
 import { useQuery } from '@apollo/client';
 import { GET_CONTENT_CARDS } from 'graphql/gqlConstants';
 import DebounceSearch from 'components/DebounceSearch';
@@ -43,12 +43,10 @@ const Podcast = () => {
           toggleFilterStatus={onFiltering}
         />
       </Box>
-      <Center>
-        <Spin loading={loading || filtering}>
-          {error && 'Unable to process your request'}
-          {!loading && !error && renderContents()}
-        </Spin>
-      </Center>
+      <Spin loading={loading || filtering} tip='Filtering text ...'>
+        {error && 'Unable to process your request'}
+        {!loading && !error && renderContents()}
+      </Spin>
     </Stack>
   );
 };
