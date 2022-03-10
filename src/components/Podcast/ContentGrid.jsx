@@ -1,3 +1,4 @@
+import { memo } from 'raect';
 import { SimpleGrid } from '@chakra-ui/react';
 import ContentCard from './ContentCard';
 
@@ -11,4 +12,4 @@ const ContentGrid = ({ content }) => {
   );
 };
 
-export default ContentGrid;
+export default memo(ContentGrid);

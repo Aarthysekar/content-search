@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Box, Image, Text } from '@chakra-ui/react';
 
 const formImageUrl = uri => {
@@ -64,4 +65,4 @@ const ContentCard = ({ contentData }) => {
   );
 };
 
-export default ContentCard;
+export default memo(ContentCard);
