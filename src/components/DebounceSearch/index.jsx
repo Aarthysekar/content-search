@@ -31,6 +31,7 @@ const DebounceSearch = ({
 
   return (
     <Input
+      variant='filled'
       placeholder='Type any keyword'
       onChange={e => setSearchText(e.target.value)}
     />
