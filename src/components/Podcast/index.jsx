@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Box, Center, Input, Stack, Text } from '@chakra-ui/react';
 import { useQuery } from '@apollo/client';
 import { GET_CONTENT_CARDS } from 'graphql/gqlConstants';
@@ -5,12 +6,20 @@ import ContentGrid from './ContentGrid';
 
 const Podcast = () => {
   const { data, loading, error } = useQuery(GET_CONTENT_CARDS);
+  const [keyword, setKeyword] = useState('');
+
+  const onKeywordChange = (e) => setKeyword(e.target.value)
 
   const renderContents = () => {
     const {
       contentCards: { edges },
     } = data;
-    return <ContentGrid content={edges} />;
+    const filteredContent = keyword
+      ? edges.filter(({ name }) => {
+          return name?.toLowerCase().includes(keyword.toLowerCase());
+        })
+      : edges;
+    return <ContentGrid content={filteredContent} />;
   };
 
   return (
@@ -19,7 +28,7 @@ const Podcast = () => {
         <Text color='white' fontWeight='semibold'>
           Search
         </Text>
-        <Input />
+        <Input onChange={onKeywordChange}/>
       </Box>
       <Center>
         {loading && 'Loading ...'}
