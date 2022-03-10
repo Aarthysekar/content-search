@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 import { GET_CONTENT_CARDS } from 'graphql/gqlConstants';
 import DebounceSearch from 'components/DebounceSearch';
 import Spin from 'components/Spin';
+import Empty from 'components/Empty';
 import ContentGrid from './ContentGrid';
 
 const Podcast = () => {
@@ -29,6 +30,12 @@ const Podcast = () => {
           return name?.toLowerCase().includes(keyword.toLowerCase());
         })
       : edges;
+    if(!edges.length) {
+      return <Empty message='No Podcasts found' />;
+    }
+    if(keyword.length && !filteredContent.length){
+      return <Empty message='No matches found. Please try a different keyword.' />
+    }
     return <ContentGrid content={filteredContent} />;
   };
 
