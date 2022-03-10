@@ -1,0 +1,209 @@
+{
+  "data": {
+    "contentCards": {
+      "edges": [
+        {
+          "name": "Ask Better Questions to Solve Your Business Problems",
+          "id": "5b2b537a-ad44-455d-bbed-ce0e64e0f698",
+          "image": {
+            "uri": "https://images.prod.tigerhall.io/2021-08-28/78b7477b-3057-4ae1-b381-71f141835f20.jpg",
+            "__typename": "Image"
+          },
+          "categories": [
+            {
+              "name": "Strategic Thinking",
+              "__typename": "Category"
+            }
+          ],
+          "experts": [
+            {
+              "firstName": "Sonia",
+              "lastName": "Gupta",
+              "title": "MD, Growth \u0026 Innovation",
+              "company": "SCB GBS",
+              "__typename": "Expert"
+            }
+          ],
+          "__typename": "Podcast"
+        },
+        {
+          "name": "Scale Up Your Hiring in a Startup",
+          "id": "2998e8ec-9602-4bea-a313-ccb4595eeaaf",
+          "image": {
+            "uri": "https://images.prod.tigerhall.io/2021-08-24/fc6e1a0c-54c4-4625-9053-a029b93ab7e8.jpg",
+            "__typename": "Image"
+          },
+          "categories": [
+            {
+              "name": "Hiring",
+              "__typename": "Category"
+            }
+          ],
+          "experts": [
+            {
+              "firstName": "Paul",
+              "lastName": "Hadjy",
+              "title": "Founder ",
+              "company": "Horangi",
+              "__typename": "Expert"
+            }
+          ],
+          "__typename": "Podcast"
+        },
+        {
+          "name": "Hiring the Right People When Scaling to New Markets",
+          "id": "4938c485-e196-4947-8df0-207935de8a19",
+          "image": {
+            "uri": "https://images.prod.tigerhall.io/2021-08-24/845564e4-5187-4a04-9957-1f51117d14b7.jpg",
+            "__typename": "Image"
+          },
+          "categories": [
+            {
+              "name": "Hiring",
+              "__typename": "Category"
+            }
+          ],
+          "experts": [
+            {
+              "firstName": "Vikas",
+              "lastName": "Bhola",
+              "title": "Regional Director, South Asia Pacific",
+              "company": "Booking.com",
+              "__typename": "Expert"
+            }
+          ],
+          "__typename": "Podcast"
+        },
+        {
+          "name": "Inheriting a Team With Low Morale",
+          "id": "eb2c0ad1-a406-4af8-8fbe-28be42bb0065",
+          "image": {
+            "uri": "https://images.prod.tigerhall.io/2021-08-25/4b8c894c-a3af-463e-b986-02361e7da3a1.jpg",
+            "__typename": "Image"
+          },
+          "categories": [
+            {
+              "name": "Managing Performance",
+              "__typename": "Category"
+            }
+          ],
+          "experts": [
+            {
+              "firstName": "Shahid",
+              "lastName": "Nizami",
+              "title": "Former MD, APAC",
+              "company": "HubSpot",
+              "__typename": "Expert"
+            }
+          ],
+          "__typename": "Podcast"
+        },
+        {
+          "name": "The Ethics \u0026 Dangers of Smart City Technology",
+          "id": "7e13a8fa-7739-4da2-a59e-bbfb6d106ba8",
+          "image": {
+            "uri": "https://images.prod.tigerhall.io/2021-08-23/f4476f5f-abf7-4a8a-9fb9-5bd37c7153b7.jpg",
+            "__typename": "Image"
+          },
+          "categories": [
+            {
+              "name": "Let's Talk Tech",
+              "__typename": "Category"
+            }
+          ],
+          "experts": [
+            {
+              "firstName": "Charles",
+              "lastName": "Reed Anderson",
+              "title": "Founder | Senior Advisor",
+              "company": "Charles Reed Anderson \u0026 Associates | McKinsey \u0026 Company",
+              "__typename": "Expert"
+            }
+          ],
+          "__typename": "Podcast"
+        },
+        {
+          "name": "Cultivating Discipline for Sales Success",
+          "id": "19a98bc3-e2a9-4d3e-8d16-d8854295aeca",
+          "image": {
+            "uri": "https://images.prod.tigerhall.io/2021-08-24/a7daa21f-cccd-4251-a011-92ec262a0943.jpg",
+            "__typename": "Image"
+          },
+          "categories": [
+            {
+              "name": "Discovering Opportunities",
+              "__typename": "Category"
+            },
+            {
+              "name": "Personal Productivity",
+              "__typename": "Category"
+            }
+          ],
+          "experts": [
+            {
+              "firstName": "Scott",
+              "lastName": "Pugh",
+              "title": "Director, APAC",
+              "company": "Mixpanel",
+              "__typename": "Expert"
+            }
+          ],
+          "__typename": "Podcast"
+        },
+        {
+          "name": "Virtual Collaboration: How to Be a Great Remote Boss",
+          "id": "fad618fc-c327-42eb-9e1a-9dcfecc47242",
+          "image": {
+            "uri": "https://images.prod.tigerhall.io/2021-08-24/c7db83cb-87b0-41cb-b425-83f2af1a42a6.jpg",
+            "__typename": "Image"
+          },
+          "categories": [
+            {
+              "name": "Developing Teams",
+              "__typename": "Category"
+            },
+            {
+              "name": "Communication Tips for Leaders",
+              "__typename": "Category"
+            }
+          ],
+          "experts": [
+            {
+              "firstName": "Evelyn",
+              "lastName": "Stier",
+              "title": "Head of IT Excellence, APAC, MEA \u0026 Global Lead for Siemens’ Mobile Work Program",
+              "company": "Siemens",
+              "__typename": "Expert"
+            }
+          ],
+          "__typename": "Podcast"
+        },
+        {
+          "name": "Developing Psychological Safety in Mentorship",
+          "id": "87cb9bd8-28e3-4758-a825-b04a8ff0ca34",
+          "image": {
+            "uri": "https://images.prod.tigerhall.io/2021-08-24/3e272165-16a7-4ef0-aa0f-41be282aab83.jpg",
+            "__typename": "Image"
+          },
+          "categories": [
+            {
+              "name": "Coach \u0026 Mentor Your Team",
+              "__typename": "Category"
+            }
+          ],
+          "experts": [
+            {
+              "firstName": "Jonathan",
+              "lastName": "Joseph",
+              "title": "Head of Engineering",
+              "company": "Gojek",
+              "__typename": "Expert"
+            }
+          ],
+          "__typename": "Podcast"
+        }
+      ],
+      "__typename": "ContentConnection"
+    }
+  }
+}
