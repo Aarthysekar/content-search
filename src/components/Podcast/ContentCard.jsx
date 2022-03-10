@@ -43,13 +43,11 @@ const ContentCard = ({ contentData }) => {
         <Text fontSize='lg' fontWeight='bold' as='h3' mb={1}>
           {categories.map(({ name }) => name).join(', ')}
         </Text>
-        <Box lineHeight={1.2}>
-          <Text fontWeight='semibold' fontSize='sm'>
+        <Box lineHeight={1.2} fontWeight='semibold' fontSize='sm'>
+          <Text>
             {firstName} {lastName}
           </Text>
           <Text
-            fontWeight='semibold'
-            fontSize='sm'
             color='lightBlack'
             textTransform='uppercase'
             isTruncated
@@ -57,12 +55,7 @@ const ContentCard = ({ contentData }) => {
           >
             {title}
           </Text>
-          <Text
-            fontWeight='semibold'
-            fontSize='sm'
-            color='tigerHallOrange'
-            mb={25}
-          >
+          <Text color='tigerHallOrange' mb={25}>
             {company}
           </Text>
         </Box>
