@@ -43,7 +43,7 @@ const Podcast = () => {
           toggleFilterStatus={onFiltering}
         />
       </Box>
-      <Spin loading={loading || filtering} tip='Filtering text ...'>
+      <Spin loading={loading || filtering} tip={`${loading ? 'Loading' : 'Filtering'} podcasts ...`}>
         {error && 'Unable to process your request'}
         {!loading && !error && renderContents()}
       </Spin>

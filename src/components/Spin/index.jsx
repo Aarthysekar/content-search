@@ -1,4 +1,4 @@
-import { Center, Text } from '@chakra-ui/react';
+import { Text, VStack } from '@chakra-ui/react';
 import LoadingIndicator from 'components/LoadingIndicator';
 
 const Spin = props => {
@@ -7,10 +7,14 @@ const Spin = props => {
     return children;
   }
   return (
-    <>
-      <Center>{loading && <LoadingIndicator />}</Center>
-      <Center>{loading && tip && <Text>{tip}</Text>}</Center>
-    </>
+    <VStack>
+      {loading && <LoadingIndicator />}
+      {loading && tip && (
+        <Text color='tigerHallOrange' fontSize={16}>
+          {tip}
+        </Text>
+      )}
+    </VStack>
   );
 };
 
