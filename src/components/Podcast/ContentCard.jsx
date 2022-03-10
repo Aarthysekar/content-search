@@ -1,8 +1,14 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
+
+const formImageUrl = uri => {
+  const { origin, pathname } = new URL(uri);
+  return `${origin}/resize/250x${pathname}`;
+};
 
 const ContentCard = ({ contentData }) => {
   const {
     name,
+    image: { uri },
     categories,
     experts,
   } = contentData;
@@ -17,6 +23,13 @@ const ContentCard = ({ contentData }) => {
       as="article"
       color="black"
     >
+      <Image
+        src={formImageUrl(uri)}
+        alt={name}
+        objectFit="cover"
+        height="130"
+        w="full"
+      />
       <Box>
         <Text>{name}</Text>
         <Text>{categories.map(({ name }) => name).join(', ')}</Text>
@@ -24,7 +37,9 @@ const ContentCard = ({ contentData }) => {
           <Text>
             {firstName} {lastName}
           </Text>
-          <Text isTruncated title={title}>{title}</Text>
+          <Text isTruncated title={title}>
+            {title}
+          </Text>
           <Text>{company}</Text>
         </Box>
       </Box>
