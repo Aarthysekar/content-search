@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Center, Input, Stack, Text } from '@chakra-ui/react';
 import { useQuery } from '@apollo/client';
 import { GET_CONTENT_CARDS } from 'graphql/gqlConstants';
 import ContentGrid from './ContentGrid';
@@ -14,11 +14,19 @@ const Podcast = () => {
   };
 
   return (
-    <Box m={[5, 10]} mt={10}>
-      {loading && 'Loading ...'}
-      {error && 'Unable to process your request'}
-      {!loading && !error && renderContents()}
-    </Box>
+    <Stack spacing={4} m={[5, 10]} mt={10}>
+      <Box>
+        <Text color='white' fontWeight='semibold'>
+          Search
+        </Text>
+        <Input />
+      </Box>
+      <Center>
+        {loading && 'Loading ...'}
+        {error && 'Unable to process your request'}
+        {!loading && !error && renderContents()}
+      </Center>
+    </Stack>
   );
 };
 
