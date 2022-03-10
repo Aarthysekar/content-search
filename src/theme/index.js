@@ -1,13 +1,15 @@
 import { extendTheme } from '@chakra-ui/react';
-import Input from 'theme/components/Input'
+import Input from 'theme/components/Input';
 
 const theme = extendTheme({
   colors: {
     tigerHallOrange: '#ff8615',
     tigerHallTeal: '#003238',
     darkTeal: '#001315',
+    darkTealSecondary: '#001F24',
     black: '#000000',
     lightBlack: '#333333',
+    grey: '#989898',
   },
   styles: {
     global: {
@@ -17,8 +19,8 @@ const theme = extendTheme({
     },
   },
   components: {
-    Input
-  }
+    Input,
+  },
 });
 
 export default theme;
