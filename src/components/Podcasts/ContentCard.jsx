@@ -18,33 +18,46 @@ const ContentCard = ({ contentData }) => {
 
   return (
     <Box
+      as='article'
       borderRadius='md'
       bg='white'
       overflow='hidden'
-      as='article'
       color='black'
     >
       <Image
         src={formImageUrl(uri)}
         alt={name}
         objectFit='cover'
-        height='130'
+        height='140'
         w='full'
       />
       <Box p={2.5}>
         <Text
           fontWeight='bold'
-          letterSpacing='wide'
           fontSize='xs'
+          letterSpacing='wider'
           textTransform='uppercase'
           color='tigerHallOrange'
+          mb={1}
         >
           {name}
         </Text>
-        <Text fontSize='lg' fontWeight='bold' as='h3' mb={1}>
+        <Text
+          as='h3'
+          fontSize='lg'
+          fontWeight='extrabold'
+          letterSpacing='wider'
+          lineHeight={1.4}
+          mb={1}
+        >
           {categories.map(({ name }) => name).join(', ')}
         </Text>
-        <Box lineHeight={1.2} fontWeight='semibold' fontSize='sm'>
+        <Box
+          fontSize='sm'
+          fontWeight='semibold'
+          letterSpacing='wide'
+          lineHeight={1.5}
+        >
           <Text>
             {firstName} {lastName}
           </Text>
@@ -56,7 +69,7 @@ const ContentCard = ({ contentData }) => {
           >
             {title}
           </Text>
-          <Text color='tigerHallOrange' mb={25}>
+          <Text color='tigerHallOrange' mb={5}>
             {company}
           </Text>
         </Box>
