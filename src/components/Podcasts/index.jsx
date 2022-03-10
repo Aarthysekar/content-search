@@ -7,6 +7,10 @@ import Spin from 'components/Spin';
 import Empty from 'components/Empty';
 import ContentGrid from './ContentGrid';
 
+const renderEmptyComponent = (message) => {
+  return <Empty message={message} />
+}
+
 const Podcast = () => {
   const { data, loading, error } = useQuery(GET_CONTENT_CARDS);
   const [keyword, setKeyword] = useState('');
@@ -31,10 +35,10 @@ const Podcast = () => {
         })
       : edges;
     if(!edges.length) {
-      return <Empty message='No Podcasts found' />;
+      return renderEmptyComponent('No podcasts found.');
     }
     if(keyword.length && !filteredContent.length){
-      return <Empty message='No matches found. Please try a different keyword.' />
+      return renderEmptyComponent('No matches found. Please try a different keyword.');
     }
     return <ContentGrid content={filteredContent} />;
   };
