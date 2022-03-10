@@ -1,6 +1,6 @@
 describe('Feature: Podcast contents', () => {
     beforeEach(() => {
-        cy.visit('http://localhost:3000/');
+        cy.visitApp();
     })
 
     it('Can see Search option', () => {
