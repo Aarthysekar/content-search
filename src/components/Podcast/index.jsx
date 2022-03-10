@@ -8,10 +8,15 @@ import DebounceSearch from 'components/DebounceSearch';
 const Podcast = () => {
   const { data, loading, error } = useQuery(GET_CONTENT_CARDS);
   const [keyword, setKeyword] = useState('');
+  const [filtering, setFiltering] = useState(false);
 
   const onKeywordChange = useCallback(value => {
     console.log(value);
     setKeyword(value);
+  }, []);
+
+  const onFiltering = useCallback(status => {
+    setFiltering(status);
   }, []);
 
   const renderContents = () => {
@@ -34,12 +39,13 @@ const Podcast = () => {
         </Text>
         <DebounceSearch
           onChange={onKeywordChange}
+          toggleFilterStatus={onFiltering}
         />
       </Box>
       <Center>
-        {loading && 'Loading ...'}
+        {(loading || filtering) && 'Loading ...'}
         {error && 'Unable to process your request'}
-        {!loading && !error && renderContents()}
+        {!loading && !filtering && !error && renderContents()}
       </Center>
     </Stack>
   );
