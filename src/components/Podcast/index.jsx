@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Box, Center, Stack, Text } from '@chakra-ui/react';
 import { useQuery } from '@apollo/client';
 import { GET_CONTENT_CARDS } from 'graphql/gqlConstants';
@@ -9,10 +9,10 @@ const Podcast = () => {
   const { data, loading, error } = useQuery(GET_CONTENT_CARDS);
   const [keyword, setKeyword] = useState('');
 
-  const onKeywordChange = (value) => {
-      console.log(value);
-      setKeyword(value)
-  }
+  const onKeywordChange = useCallback(value => {
+    console.log(value);
+    setKeyword(value);
+  }, []);
 
   const renderContents = () => {
     const {
