@@ -3,18 +3,18 @@ import { Input } from '@chakra-ui/react';
 
 const DebounceSearch = ({
   onChange,
-  toggleFilterStatus,
+  onTypingStatusChange,
   debounceTime = 300,
 }) => {
   const [searchText, setSearchText] = useState('');
 
   const setFilteringStatus = useCallback(
     status => {
-      if (toggleFilterStatus) {
-        toggleFilterStatus(status);
+      if (onTypingStatusChange) {
+        onTypingStatusChange(status);
       }
     },
-    [toggleFilterStatus]
+    [onTypingStatusChange]
   );
 
   useEffect(() => {
