@@ -17,7 +17,6 @@ const Podcast = () => {
   const [filtering, setFiltering] = useState(false);
 
   const onKeywordChange = useCallback(value => {
-    console.log(value);
     setKeyword(value);
   }, []);
 
@@ -29,7 +28,7 @@ const Podcast = () => {
     const {
       contentCards: { edges },
     } = data;
-    const filteredContent = keyword
+    const filteredContents = keyword
       ? edges.filter(({ name }) => {
           return name?.toLowerCase().includes(keyword.toLowerCase());
         })
@@ -37,12 +36,12 @@ const Podcast = () => {
     if (!edges.length) {
       return renderEmptyComponent('No podcasts found.');
     }
-    if (keyword.length && !filteredContent.length) {
+    if (keyword.length && !filteredContents.length) {
       return renderEmptyComponent(
         'No matches found. Please try a different keyword.'
       );
     }
-    return <ContentGrid content={filteredContent} />;
+    return <ContentGrid content={filteredContents} />;
   };
 
   return (
@@ -53,7 +52,7 @@ const Podcast = () => {
         </Text>
         <DebounceSearch
           onChange={onKeywordChange}
-          toggleFilterStatus={onFiltering}
+          onTypingStatusChange={onFiltering}
         />
       </Box>
       <Spin

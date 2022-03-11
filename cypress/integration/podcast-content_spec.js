@@ -23,7 +23,6 @@ describe('Feature: Podcast contents', () => {
     cy.wait('@gqlGetContentCardsQuery').then(() => {
       cy.findAllByRole('article').should('have.length', 8);
       cy.findByRole('textbox').type('hiring');
-      cy.findByAltText('Loading ...').should('exist');
       cy.findAllByRole('article').should('have.length', 2);
     });
   });
