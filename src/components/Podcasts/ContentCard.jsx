@@ -40,17 +40,17 @@ const ContentCard = ({ contentData }) => {
           color='tigerHallOrange'
           mb={1}
         >
-          {name}
+          {categories.map(({ name }) => name).join(', ')}
         </Text>
         <Text
           as='h3'
           fontSize='lg'
           fontWeight='extrabold'
-          letterSpacing='wider'
+          letterSpacing='wide'
           lineHeight={1.4}
           mb={1}
         >
-          {categories.map(({ name }) => name).join(', ')}
+          {name}
         </Text>
         <Box
           fontSize='sm'
