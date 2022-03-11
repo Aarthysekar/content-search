@@ -1,3 +1,8 @@
+import {
+  shouldLoadingIndicatorExists,
+  shouldLoadingIndicatorNotExists,
+} from '../utils';
+
 describe('Feature: Podcast contents', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://api.staging.tigerhall.io/graphql', req => {
@@ -14,15 +19,22 @@ describe('Feature: Podcast contents', () => {
   });
 
   it('Can view loading indicator on fetching podcast contents and can view unfiltered podcasts', () => {
+    shouldLoadingIndicatorExists();
     cy.wait('@gqlGetContentCardsQuery').then(() => {
+      shouldLoadingIndicatorNotExists();
       cy.findAllByRole('article').should('have.length', 8);
     });
   });
 
-  it('Can view podcast content filtered based on search', () => {
+  it('Can view podcast content filtered based on search and can view loading indicator while filtering', () => {
+    shouldLoadingIndicatorExists();
     cy.wait('@gqlGetContentCardsQuery').then(() => {
+      shouldLoadingIndicatorNotExists();
       cy.findAllByRole('article').should('have.length', 8);
-      cy.findByRole('textbox').type('hiring');
+      cy.findByRole('textbox').type('{alt}hiring', { release: false });
+      shouldLoadingIndicatorExists();
+      cy.findByRole('textbox').type('{alt}');
+      shouldLoadingIndicatorNotExists();
       cy.findAllByRole('article').should('have.length', 2);
     });
   });
