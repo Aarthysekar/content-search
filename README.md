@@ -1,6 +1,6 @@
 # TigerHall Web App
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Aarthysekar/content-search/master/showcase.png" alt="Showcase" height="500">
+  <img src="https://raw.githubusercontent.com/Aarthysekar/content-search/master/showcase.png" alt="Showcase" width="80%">
 </p>
 
 ## Important Commands
