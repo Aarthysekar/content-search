@@ -1,6 +1,6 @@
 import {
-  shouldLoadingIndicatorExists,
-  shouldLoadingIndicatorNotExists,
+  loadingIndicatorShouldExist,
+  loadingIndicatorShouldNotExist,
 } from '../utils';
 
 describe('Feature: Podcast contents', () => {
@@ -19,22 +19,22 @@ describe('Feature: Podcast contents', () => {
   });
 
   it('Can view loading indicator on fetching podcast contents and can view unfiltered podcasts', () => {
-    shouldLoadingIndicatorExists();
+    loadingIndicatorShouldExist();
     cy.wait('@gqlGetContentCardsQuery').then(() => {
-      shouldLoadingIndicatorNotExists();
+      loadingIndicatorShouldNotExist();
       cy.findAllByRole('article').should('have.length', 8);
     });
   });
 
   it('Can view podcast content filtered based on search and can view loading indicator while filtering', () => {
-    shouldLoadingIndicatorExists();
+    loadingIndicatorShouldExist();
     cy.wait('@gqlGetContentCardsQuery').then(() => {
-      shouldLoadingIndicatorNotExists();
+      loadingIndicatorShouldNotExist();
       cy.findAllByRole('article').should('have.length', 8);
       cy.findByRole('textbox').type('{alt}hiring', { release: false });
-      shouldLoadingIndicatorExists();
+      loadingIndicatorShouldExist();
       cy.findByRole('textbox').type('{alt}');
-      shouldLoadingIndicatorNotExists();
+      loadingIndicatorShouldNotExist();
       cy.findAllByRole('article').should('have.length', 2);
     });
   });
